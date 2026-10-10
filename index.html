@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SIH26097: a voice-first livelihood pathway engine that turns a spoken conversation in Telugu, Hindi or English into two or three explainable, NSQF-aligned livelihood pathways.">
 
-    <title>SIH 2026 | Project Prototype</title>
+    <title>SIH26097 | Voice-First Livelihood Pathway Engine</title>
 
     <style>
         * {
@@ -37,6 +38,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -73,10 +76,48 @@
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
             color: #9ca3af;
             font-size: 18px;
+        }
+
+        .hero .quote {
+            margin-top: 18px;
+            color: #60a5fa;
+            font-style: italic;
+            font-size: 17px;
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+        }
+
+        .btn.primary {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+        }
+
+        .btn:focus-visible,
+        a:focus-visible {
+            outline: 2px solid #60a5fa;
+            outline-offset: 3px;
         }
 
         /* Sections */
@@ -101,6 +142,83 @@
             color: #a8afbd;
         }
 
+        .card p + p {
+            margin-top: 14px;
+        }
+
+        .card strong {
+            color: #e2e8f0;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta span {
+            padding: 6px 13px;
+            border-radius: 8px;
+            background: #1a2232;
+            border: 1px solid #2c374b;
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        .meta b {
+            color: #8b93a7;
+            font-weight: normal;
+        }
+
+        .list {
+            margin-top: 16px;
+            padding-left: 20px;
+            color: #a8afbd;
+        }
+
+        .list li + li {
+            margin-top: 8px;
+        }
+
+        .list li::marker {
+            color: #60a5fa;
+        }
+
+        /* Solution flow */
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 22px;
+        }
+
+        .flow .step {
+            background: #0f1523;
+            border: 1px solid #252d3d;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .flow .step h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .flow .step p {
+            font-size: 14px;
+        }
+
+        .principle {
+            margin-top: 22px;
+            padding: 16px 20px;
+            border-left: 3px solid #2563eb;
+            background: #0f1523;
+            border-radius: 0 10px 10px 0;
+            color: #cbd5e1;
+        }
+
         /* Features */
 
         .features {
@@ -111,10 +229,62 @@
 
         .feature h3 {
             margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .feature p {
             font-size: 15px;
+        }
+
+        /* Status */
+
+        .status {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .status h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 3px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .pill.built {
+            background: #052e1a;
+            color: #4ade80;
+            border: 1px solid #14532d;
+        }
+
+        .pill.mock {
+            background: #2d2105;
+            color: #fbbf24;
+            border: 1px solid #5c4410;
+        }
+
+        .pill.road {
+            background: #1a2232;
+            color: #94a3b8;
+            border: 1px solid #334155;
+        }
+
+        .status .list {
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #8b93a7;
         }
 
         /* Video */
@@ -136,6 +306,16 @@
             border: 0;
             top: 0;
             left: 0;
+        }
+
+        .video-link {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #8b93a7;
+        }
+
+        .video-link a {
+            color: #60a5fa;
         }
 
         /* Technology */
@@ -165,9 +345,13 @@
             font-size: 14px;
         }
 
+        footer p + p {
+            margin-top: 6px;
+        }
+
         /* Mobile */
 
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
 
             h1 {
                 font-size: 34px;
@@ -177,12 +361,18 @@
                 padding: 60px 0;
             }
 
-            .features {
+            .features,
+            .flow,
+            .status {
                 grid-template-columns: 1fr;
             }
 
             .hero p {
                 font-size: 16px;
+            }
+
+            .card {
+                padding: 22px;
             }
         }
     </style>
@@ -194,8 +384,8 @@
 
     <nav>
         <div class="container">
-            <div class="logo">PROJECT NAME</div>
-            <div class="tag">SIH 2026</div>
+            <div class="logo">SIH26097</div>
+            <div class="tag">Smart India Hackathon 2026</div>
         </div>
     </nav>
 
@@ -207,25 +397,35 @@
         <div class="hero">
 
             <span class="badge">
-                Smart India Hackathon 2026
+                Smart India Hackathon 2026 · Software
             </span>
 
             <h1>
-                Your Project Name
+                Voice-First Livelihood<br>Pathway Engine
             </h1>
 
             <p>
-                A technology-driven solution designed to address
-                a real-world problem through an intelligent,
-                scalable and practical approach.
+                A beneficiary speaks in Telugu, Hindi or English and
+                receives two or three realistic, explainable livelihood
+                pathways aligned to NSQF. Pathways change live when the
+                person changes a constraint.
             </p>
+
+            <p class="quote">
+                "From voice to livelihood, not just voice to course."
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn primary" href="#demo">Watch the demo</a>
+                <a class="btn" href="#problem">Read the problem</a>
+            </div>
 
         </div>
 
 
         <!-- Problem -->
 
-        <section>
+        <section id="problem">
 
             <h2 class="section-title">
                 The Problem
@@ -233,13 +433,40 @@
 
             <div class="card">
 
-                <p>
-                    Replace this section with a short and clear
-                    explanation of the problem statement.
+                <div class="meta">
+                    <span><b>Problem statement</b> SIH26097</span>
+                    <span><b>Ministry</b> Social Justice and Empowerment</span>
+                    <span><b>Scheme</b> PM-AJAY, GIA component</span>
+                    <span><b>Bucket</b> Agriculture, FoodTech and Rural Development</span>
+                </div>
 
-                    Explain who faces the problem, why it matters,
-                    and what limitations exist with current approaches.
+                <p>
+                    <strong>AI-Driven Voice Assistant for Livelihood Mapping and
+                    NSQF-Aligned Skilling Recommendations for SC Communities
+                    under the GIA component of PM-AJAY.</strong>
                 </p>
+
+                <p>
+                    Many beneficiaries cannot use text-heavy portals or course
+                    catalogues. Generic counselling ignores personal
+                    constraints such as distance, time, family duties and the
+                    wish for self-employment, so a recommendation that looks
+                    good on paper (too far, too long, wrong education level)
+                    never turns into an enrolment.
+                </p>
+
+                <p>
+                    Implementing agencies also have no structured picture of
+                    what beneficiaries want, which skills are missing, and
+                    where training seats fall short of demand.
+                </p>
+
+                <ul class="list">
+                    <li>Voice conversations in local languages and dialects, not forms</li>
+                    <li>Profiling of education, skills, assets, mobility and work preference</li>
+                    <li>NSQF-aligned training and regional opportunity matching</li>
+                    <li>Reach through IVR, WhatsApp voice notes and a lightweight web or kiosk interface</li>
+                </ul>
 
             </div>
 
@@ -248,7 +475,7 @@
 
         <!-- Solution -->
 
-        <section>
+        <section id="solution">
 
             <h2 class="section-title">
                 Our Solution
@@ -257,11 +484,50 @@
             <div class="card">
 
                 <p>
-                    Replace this text with your proposed solution.
-
-                    Explain how your system works and how it directly
-                    addresses the problem described above.
+                    A livelihood decision-support system with a voice entry
+                    point. The language model understands the person. Rules and
+                    curated data decide what is actually feasible. The system
+                    never invents jobs, courses or statistics.
                 </p>
+
+                <div class="flow">
+
+                    <div class="step">
+                        <h3>1. Voice to profile</h3>
+                        <p>
+                            The person talks to a live voice assistant that
+                            builds a structured profile. Unknown fields stay
+                            marked missing, and the profile is read back for
+                            the person to confirm or correct.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <h3>2. Pathway engine</h3>
+                        <p>
+                            Hard filters (education, duration, mobility, route,
+                            equipment) remove what is not feasible. Six factors
+                            rank the rest into two or three pathways.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <h3>3. Official view</h3>
+                        <p>
+                            Consented, anonymised profiles become demand by
+                            trade, common skill gaps and a gap between
+                            interested people and training seats.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="principle">
+                    Say "I cannot spend five months" or "I cannot travel" and
+                    the pathways recompute, showing which ones dropped out and
+                    why. If no verified opportunity exists, the system says so
+                    and still offers a training pathway.
+                </div>
 
             </div>
 
@@ -270,7 +536,7 @@
 
         <!-- Features -->
 
-        <section>
+        <section id="features">
 
             <h2 class="section-title">
                 Key Features
@@ -279,26 +545,81 @@
             <div class="features">
 
                 <div class="card feature">
-                    <h3>Feature 01</h3>
+                    <h3>Live two-way voice</h3>
                     <p>
-                        Describe the first major capability
-                        of your solution.
+                        A spoken conversation in Telugu, Hindi and English
+                        through the Gemini Live API, with interruption
+                        handling and session resumption.
                     </p>
                 </div>
 
                 <div class="card feature">
-                    <h3>Feature 02</h3>
+                    <h3>Missing, not guessed</h3>
                     <p>
-                        Describe the second major capability
-                        of your solution.
+                        The voice model only collects the profile. Every field
+                        is tagged stated, inferred or missing, and the person
+                        confirms before anything is recommended.
                     </p>
                 </div>
 
                 <div class="card feature">
-                    <h3>Feature 03</h3>
+                    <h3>Constraint-aware pathways</h3>
                     <p>
-                        Describe the third major capability
-                        of your solution.
+                        Two or three feasible pathways with qualification,
+                        duration, skill gap and the nearest training centre.
+                    </p>
+                </div>
+
+                <div class="card feature">
+                    <h3>Live what-if recalculation</h3>
+                    <p>
+                        Change maximum training months, mobility, self versus
+                        wage work or time available. The engine reruns in under
+                        a second and highlights what changed.
+                    </p>
+                </div>
+
+                <div class="card feature">
+                    <h3>Explainable ranking</h3>
+                    <p>
+                        A "Why this pathway" panel shows High, Medium, Low or
+                        Unknown for interest, skill, education, duration, local
+                        demand and assets. No invented percentages.
+                    </p>
+                </div>
+
+                <div class="card feature">
+                    <h3>Honest fallback</h3>
+                    <p>
+                        When no verified opportunity exists, the pathway says
+                        "No verified opportunity found" and still gives a
+                        training route.
+                    </p>
+                </div>
+
+                <div class="card feature">
+                    <h3>Official view for agencies</h3>
+                    <p>
+                        Demand by trade, common skill gaps, and interested
+                        profiles against training seats per block. Small groups
+                        are hidden to protect privacy.
+                    </p>
+                </div>
+
+                <div class="card feature">
+                    <h3>Privacy by design</h3>
+                    <p>
+                        Consent before recording, no caste, community or
+                        religion field, no exact address, and raw audio is not
+                        stored.
+                    </p>
+                </div>
+
+                <div class="card feature">
+                    <h3>Assisted mode and accessibility</h3>
+                    <p>
+                        Large buttons, a font-size control and spoken-style
+                        prompts, so one facilitator can register many people.
                     </p>
                 </div>
 
@@ -307,9 +628,68 @@
         </section>
 
 
+        <!-- Prototype status -->
+
+        <section id="status">
+
+            <h2 class="section-title">
+                What Works in the Prototype
+            </h2>
+
+            <div class="status">
+
+                <div class="card">
+                    <span class="pill built">CORE</span>
+                    <h3>Core prototype scope</h3>
+                    <ul class="list">
+                        <li>Consent screen</li>
+                        <li>Live voice conversation</li>
+                        <li>Profile capture and read-back</li>
+                        <li>Rule-based pathway engine</li>
+                        <li>What-if recalculation</li>
+                        <li>Why panel and honest fallback</li>
+                        <li>Official view on sample profiles</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="pill mock">MOCKUP</span>
+                    <h3>Shown as labelled mockups</h3>
+                    <ul class="list">
+                        <li>WhatsApp voice note channel</li>
+                        <li>IVR call flow, simulated</li>
+                        <li>Earn-now opportunity card</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="pill road">ROADMAP</span>
+                    <h3>Planned, not built</h3>
+                    <ul class="list">
+                        <li>Production IVR with telecom integration</li>
+                        <li>Offline voice-note queue</li>
+                        <li>Live NSQF and Skill India sync</li>
+                        <li>Partner and training-centre onboarding</li>
+                        <li>30 and 90 day outcome follow-up</li>
+                        <li>ML re-ranking once real outcomes exist</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="note">
+                Data in the prototype: NSQF qualification rows are placeholders
+                pending verification against official NCVET and Skill India
+                listings. Training centres, opportunities and demand figures
+                are sample data and are labelled that way on every screen.
+            </p>
+
+        </section>
+
+
         <!-- Prototype -->
 
-        <section>
+        <section id="demo">
 
             <h2 class="section-title">
                 Prototype Demonstration
@@ -319,25 +699,21 @@
 
                 <div class="video-container">
 
-                    <!--
-                        TEMPORARY YOUTUBE VIDEO
-
-                        Replace the video ID later.
-
-                        Example:
-                        https://www.youtube.com/watch?v=VIDEO_ID
-
-                        becomes:
-                        https://www.youtube.com/embed/VIDEO_ID
-                    -->
-
                     <iframe
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="Prototype Demonstration"
+                        src="https://www.youtube.com/embed/w96j8_x_wBk"
+                        title="SIH26097 prototype demonstration"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
 
                 </div>
+
+                <p class="video-link">
+                    Video not loading?
+                    <a href="https://www.youtube.com/watch?v=w96j8_x_wBk" target="_blank" rel="noopener">Watch it on YouTube</a>.
+                </p>
 
             </div>
 
@@ -346,7 +722,7 @@
 
         <!-- Technology -->
 
-        <section>
+        <section id="stack">
 
             <h2 class="section-title">
                 Technology Stack
@@ -356,12 +732,13 @@
 
                 <div class="tech">
 
+                    <span>Gemini Live API (voice)</span>
                     <span>Python</span>
-                    <span>FastAPI</span>
+                    <span>FastAPI + WebSocket proxy</span>
+                    <span>Rule engine (config-driven)</span>
+                    <span>SQLite</span>
                     <span>React</span>
-                    <span>AI / ML</span>
-                    <span>Database</span>
-                    <span>Cloud</span>
+                    <span>Vite</span>
 
                 </div>
 
@@ -378,7 +755,8 @@
 
         <div class="container">
 
-            SIH 2026 · Project Prototype
+            <p>SIH 2026 · SIH26097 · Voice-First Livelihood Pathway Engine</p>
+            <p>NSQF = placeholder pending verification | centres, opportunities, demand = sample data</p>
 
         </div>
 
